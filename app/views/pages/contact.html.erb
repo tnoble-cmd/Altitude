@@ -1,0 +1,55 @@
+<main class="page-shell">
+  <section class="panel contact-panel">
+    <div class="panel__heading">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Contact Us</h2>
+    </div>
+
+    <% if flash[:notice].present? %>
+      <div class="flash success"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if @contact_submission.errors.any? %>
+      <div class="flash error">
+        <ul>
+          <% @contact_submission.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_with model: @contact_submission, url: contact_submissions_path, local: true, class: "contact-form" do |form| %>
+      <div class="form-row">
+        <div class="field">
+          <%= form.label :name %>
+          <%= form.text_field :name, required: true %>
+        </div>
+
+        <div class="field">
+          <%= form.label :email %>
+          <%= form.email_field :email, required: true %>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <%= form.label :phone %>
+          <%= form.telephone_field :phone %>
+        </div>
+
+        <div class="field">
+          <%= form.label :company %>
+          <%= form.text_field :company %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :message %>
+        <%= form.text_area :message, rows: 6, required: true %>
+      </div>
+
+      <%= form.submit "Send Message", class: "button primary full-width" %>
+    <% end %>
+  </section>
+</main>

@@ -1,0 +1,9 @@
+New Contact Submission
+
+Name: <%= @contact_submission.name %>
+Email: <%= @contact_submission.email %>
+<% if @contact_submission.phone.present? %>Phone: <%= @contact_submission.phone %>
+<% end %><% if @contact_submission.company.present? %>Company: <%= @contact_submission.company %>
+<% end %>
+Message:
+<%= @contact_submission.message %>

@@ -1,0 +1,453 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+:root {
+  --ats-navy: #0d1f35;
+  --ats-blue: #1ca8e8;
+  --ats-blue-deep: #0d6bbd;
+  --ats-sky: #dff6ff;
+  --ats-slate: #e7edf5;
+  --ats-card: rgba(12, 30, 52, 0.88);
+  --ats-text: #eaf7ff;
+  --ats-muted: #cfe7f8;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #081b2b 0%, #0d2d4f 25%, #1fa8e6 100%);
+  color: var(--ats-text);
+}
+
+.site-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+.brand-banner {
+  width: min(100%, 980px);
+  height: auto;
+  filter: drop-shadow(0 18px 28px rgba(5, 16, 27, 0.28));
+}
+
+.page-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 0 4rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--ats-text);
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: rgba(28, 168, 232, 0.22);
+  color: #ffffff;
+  border-color: rgba(28, 168, 232, 0.5);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0 2.5rem;
+}
+
+.hero__content,
+.panel {
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+  background: rgba(9, 23, 38, 0.72);
+  border: 1px solid rgba(28, 168, 232, 0.42);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(4, 12, 22, 0.28);
+  padding: 3rem 2.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--ats-blue);
+  font-weight: 700;
+}
+
+h1, h2 {
+  margin: 0.5rem 0 1rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+.subtitle,
+.page-copy {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.button.primary {
+  background: linear-gradient(135deg, var(--ats-blue) 0%, var(--ats-blue-deep) 100%);
+  color: white;
+}
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--ats-text);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.panel {
+  margin: 0 auto;
+  text-align: left;
+}
+
+.panel,
+.card {
+  color: var(--ats-text);
+}
+
+.panel__heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-panel {
+  max-width: 860px;
+  margin-top: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.85rem 0.9rem;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.flash {
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.flash.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.flash.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.flash ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(11, 27, 43, 0.72);
+  border: 1px solid rgba(28, 168, 232, 0.34);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 24px rgba(4, 12, 22, 0.18);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.projects-page {
+  max-width: 1400px;
+}
+
+.projects-panel {
+  max-width: 100%;
+  padding: 2.25rem 1.5rem 2.5rem;
+}
+
+.project-intro {
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+.project-showcase {
+  display: flex;
+  gap: 1.4rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0.5rem 1.5rem;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.project-showcase::-webkit-scrollbar {
+  height: 10px;
+}
+
+.project-showcase::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.project-showcase::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--ats-blue), var(--ats-blue-deep));
+  border-radius: 999px;
+}
+
+.project-card {
+  position: relative;
+  flex: 0 0 420px;
+  min-height: 510px;
+  background: rgba(7, 20, 33, 0.78);
+  border: 1px solid rgba(28, 168, 232, 0.35);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 18px 36px rgba(2, 12, 20, 0.25);
+  scroll-snap-align: start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 38px rgba(2, 12, 20, 0.32);
+}
+
+.project-card--large {
+  flex-basis: 520px;
+}
+
+.project-image {
+  height: 290px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.project-image--one {
+  background: linear-gradient(135deg, rgba(13, 31, 53, 0.7), rgba(28, 168, 232, 0.8)),
+    linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.04));
+}
+
+.project-image--two {
+  background: linear-gradient(135deg, rgba(12, 37, 61, 0.75), rgba(17, 100, 179, 0.86)),
+    linear-gradient(120deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
+}
+
+.project-image--three {
+  background: linear-gradient(135deg, rgba(9, 24, 40, 0.75), rgba(53, 131, 204, 0.8)),
+    linear-gradient(120deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
+}
+
+.project-image--four {
+  background: linear-gradient(135deg, rgba(6, 20, 30, 0.72), rgba(17, 145, 209, 0.8)),
+    linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.03));
+}
+
+.project-copy {
+  padding: 1.35rem 1.2rem 1.5rem;
+}
+
+.project-tag {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ats-blue);
+  font-weight: 700;
+}
+
+.project-copy h3 {
+  margin: 0 0 0.7rem;
+  font-size: 1.5rem;
+}
+
+.project-copy p {
+  margin: 0;
+  color: var(--ats-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .site-shell {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .site-header {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .brand-banner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .site-nav {
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .nav-link {
+    padding: 0.65rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding-top: 1rem;
+  }
+
+  .hero__content,
+  .panel,
+  .projects-panel {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+
+  .subtitle,
+  .page-copy {
+    font-size: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .project-showcase {
+    gap: 0.9rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  .project-card,
+  .project-card--large {
+    flex-basis: 270px;
+    min-height: 420px;
+  }
+
+  .project-image {
+    height: 220px;
+  }
+
+  .project-copy h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-copy p {
+    font-size: 0.92rem;
+  }
+}

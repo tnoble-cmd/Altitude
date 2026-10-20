@@ -1,0 +1,13 @@
+<h2>New Contact Submission</h2>
+
+<p><strong>Name:</strong> <%= @contact_submission.name %></p>
+<p><strong>Email:</strong> <%= @contact_submission.email %></p>
+<% if @contact_submission.phone.present? %>
+  <p><strong>Phone:</strong> <%= @contact_submission.phone %></p>
+<% end %>
+<% if @contact_submission.company.present? %>
+  <p><strong>Company:</strong> <%= @contact_submission.company %></p>
+<% end %>
+
+<p><strong>Message:</strong></p>
+<p><%= simple_format(@contact_submission.message) %></p>
